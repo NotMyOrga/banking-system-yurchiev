@@ -27,7 +27,7 @@ public class OnlineShop {
     }
 
     public void addToCart(Person buyer, ShopItem item){
-        // TODO: Add the item to the buyer's cart. If the buyer doesn't have a cart yet, create one.
+        shoppingCarts.computeIfAbsent(buyer, k -> new ArrayList<>()).add(item);
     }
 
     public boolean placeOrder(Person buyer) {
